@@ -1,0 +1,20 @@
+[
+    {
+        "name": "hours",
+        "tableau_formula": "AVG([HoursPerWeek])",
+        "dax_formula": "AVERAGE('project_assignments'[HoursPerWeek])",
+        "type": "measure"
+    },
+    {
+        "name": "department_sal",
+        "tableau_formula": "COUNT([Department (projects.csv)])",
+        "dax_formula": "COUNT('projects'[Department])",
+        "type": "measure"
+    },
+    {
+        "name": "departmentCout",
+        "tableau_formula": "COUNT([Department])",
+        "dax_formula": "COUNT('sample_data'[Department])",
+        "type": "measure"
+    }
+]

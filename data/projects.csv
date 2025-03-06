@@ -1,0 +1,11 @@
+ProjectID,ProjectName,Department,Budget,StartDate,EndDate,Status
+P001,HR System Upgrade,HR,75000,2021-02-10,2021-08-15,Completed
+P002,Website Redesign,Marketing,90000,2021-04-05,2021-12-20,Completed
+P003,Financial Forecasting Tool,Finance,120000,2021-01-15,2021-09-30,Completed
+P004,Cloud Migration,IT,200000,2020-10-12,2021-07-25,Completed
+P005,Employee Portal,HR,60000,2021-07-01,2022-01-15,Completed
+P006,Social Media Campaign,Marketing,45000,2021-08-10,2021-12-05,Completed
+P007,Budget Analysis System,Finance,85000,2021-06-20,2022-02-28,Completed
+P008,Network Security Upgrade,IT,150000,2021-09-15,2022-04-30,In Progress
+P009,Recruitment Initiative,HR,40000,2022-01-10,2022-06-30,In Progress
+P010,Mobile App Development,IT,180000,2022-02-15,2022-09-30,In Progress 

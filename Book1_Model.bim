@@ -1,0 +1,212 @@
+{
+  "name": "Book1_Model",
+  "compatibilityLevel": 1550,
+  "model": {
+    "culture": "en-US",
+    "dataAccessOptions": {
+      "legacyRedirects": true,
+      "returnErrorValuesAsNull": true
+    },
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "sourceQueryCulture": "en-US",
+    "tables": [
+      {
+        "name": "sample_data",
+        "columns": [
+          {
+            "name": "Name",
+            "dataType": "string",
+            "sourceColumn": "Name",
+            "lineageTag": "800444f9-7c25-4e49-b431-4f1eefc78ee6"
+          },
+          {
+            "name": "Age",
+            "dataType": "int64",
+            "sourceColumn": "Age",
+            "lineageTag": "f9e23eeb-c0dd-465f-84f8-2812eab39ad3"
+          },
+          {
+            "name": "Department",
+            "dataType": "string",
+            "sourceColumn": "Department",
+            "lineageTag": "781027e4-98d1-432b-9fd3-da9fab6a9b01"
+          },
+          {
+            "name": "Salary",
+            "dataType": "int64",
+            "sourceColumn": "Salary",
+            "lineageTag": "6ed11701-7097-4cab-8644-db174ba3e12f"
+          },
+          {
+            "name": "JoiningDate",
+            "dataType": "dateTime",
+            "sourceColumn": "JoiningDate",
+            "lineageTag": "299dbab8-0b5a-4b1c-b4be-a0d51da268fe"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "sample_data Partition",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": "let\n    Source = Csv.Document(File.Contents(\"sample_data.csv\"),[Delimiter=\",\", Columns=25, QuoteStyle=QuoteStyle.Csv]),\n    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true])\nin\n    #\"Promoted Headers\""
+            }
+          }
+        ],
+        "measures": [
+          {
+            "name": "departmentCout",
+            "expression": "COUNT('sample_data'[Department])",
+            "formatString": "0",
+            "lineageTag": "caf8447a-b6c9-40c9-b44f-3235e2bde5da"
+          }
+        ]
+      },
+      {
+        "name": "projects",
+        "columns": [
+          {
+            "name": "ProjectID",
+            "dataType": "int64",
+            "sourceColumn": "ProjectID",
+            "lineageTag": "31c9524b-8ffa-4e15-8125-354c937a35e6"
+          },
+          {
+            "name": "ProjectName",
+            "dataType": "string",
+            "sourceColumn": "ProjectName",
+            "lineageTag": "94dc78e2-54a8-45c4-a482-c1cc2c1e73a2"
+          },
+          {
+            "name": "Department",
+            "dataType": "string",
+            "sourceColumn": "Department",
+            "lineageTag": "44f8ddf7-984e-4af9-9fb9-0b2e5a30f2bf"
+          },
+          {
+            "name": "Budget",
+            "dataType": "int64",
+            "sourceColumn": "Budget",
+            "lineageTag": "fd52a48d-0edb-4744-a7a7-c96cd6570261"
+          },
+          {
+            "name": "StartDate",
+            "dataType": "dateTime",
+            "sourceColumn": "StartDate",
+            "lineageTag": "07adde5c-aaa4-4fd0-92e3-00471ce2b01b"
+          },
+          {
+            "name": "EndDate",
+            "dataType": "dateTime",
+            "sourceColumn": "EndDate",
+            "lineageTag": "1678eb6a-cd11-4ffe-a12e-a42747a05f95"
+          },
+          {
+            "name": "Status",
+            "dataType": "boolean",
+            "sourceColumn": "Status",
+            "lineageTag": "302abbef-ed68-4882-aad8-c7307917c9bc"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "projects Partition",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": "let\n    Source = Csv.Document(File.Contents(\"projects.csv\"),[Delimiter=\",\", Columns=25, QuoteStyle=QuoteStyle.Csv]),\n    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true])\nin\n    #\"Promoted Headers\""
+            }
+          }
+        ],
+        "measures": [
+          {
+            "name": "department_sal",
+            "expression": "COUNT('projects'[Department (projects.csv])])",
+            "formatString": "0",
+            "lineageTag": "344e8771-e796-4e37-b051-4aa198c31922"
+          }
+        ]
+      },
+      {
+        "name": "project_assignments",
+        "columns": [
+          {
+            "name": "AssignmentID",
+            "dataType": "int64",
+            "sourceColumn": "AssignmentID",
+            "lineageTag": "92f8b783-72c7-4f43-8265-3cc7f9cc15f7"
+          },
+          {
+            "name": "EmployeeName",
+            "dataType": "string",
+            "sourceColumn": "EmployeeName",
+            "lineageTag": "b208430e-a96c-4afd-8d2d-dfe8060c4443"
+          },
+          {
+            "name": "ProjectID",
+            "dataType": "int64",
+            "sourceColumn": "ProjectID",
+            "lineageTag": "f7d434d5-7265-4b96-81e3-7c6866bdd74f"
+          },
+          {
+            "name": "Role",
+            "dataType": "string",
+            "sourceColumn": "Role",
+            "lineageTag": "174d6b9a-7072-4524-90e0-8ba8973a11ec"
+          },
+          {
+            "name": "AssignmentDate",
+            "dataType": "dateTime",
+            "sourceColumn": "AssignmentDate",
+            "lineageTag": "5f0b7517-7a9a-4e63-bf04-b48c88c4bd57"
+          },
+          {
+            "name": "HoursPerWeek",
+            "dataType": "int64",
+            "sourceColumn": "HoursPerWeek",
+            "lineageTag": "8fc2ce22-b954-4eb6-9e58-804dda0763f0"
+          },
+          {
+            "name": "PerformanceRating",
+            "dataType": "double",
+            "sourceColumn": "PerformanceRating",
+            "lineageTag": "1df488fd-3f17-4354-952a-1b7b0185c494"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "project_assignments Partition",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": "let\n    Source = Csv.Document(File.Contents(\"project_assignments.csv\"),[Delimiter=\",\", Columns=25, QuoteStyle=QuoteStyle.Csv]),\n    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true])\nin\n    #\"Promoted Headers\""
+            }
+          }
+        ],
+        "measures": [
+          {
+            "name": "hours",
+            "expression": "AVERAGE('project_assignments'[HoursPerWeek])",
+            "formatString": "0",
+            "lineageTag": "90a767f7-e892-4e52-9250-10ebd86ff59e"
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "fromTable": "project_assignments",
+        "fromColumn": "ProjectID",
+        "toTable": "projects",
+        "toColumn": "ProjectID"
+      }
+    ],
+    "annotations": [
+      {
+        "name": "TabularEditor_SerializeOptions",
+        "value": "{\n  \"IgnoreInferredObjects\": true,\n  \"IgnoreInferredProperties\": true,\n  \"IgnoreTimestamps\": true,\n  \"SplitMultilineStrings\": true,\n  \"PrefixFilenames\": false,\n  \"LocalTranslations\": false,\n  \"LocalPerspectives\": false,\n  \"LocalRelationships\": false,\n  \"Levels\": [\"Data Sources\", \"Shared Expressions\", \"Perspectives\", \"Relationships\", \"Roles\", \"Tables\", \"Tables/Columns\", \"Tables/Hierarchies\", \"Tables/Measures\", \"Tables/Partitions\", \"Tables/Calculation Items\", \"Translations\"]\n}"
+      }
+    ]
+  }
+}

@@ -1,0 +1,27 @@
+AssignmentID,EmployeeName,ProjectID,Role,AssignmentDate,HoursPerWeek,PerformanceRating
+A001,Alice,P001,Project Manager,2021-02-10,20,4.5
+A002,Alice,P005,Team Lead,2021-07-01,15,4.8
+A003,Alice,P009,Project Manager,2022-01-10,25,4.2
+A004,Bob,P004,Developer,2020-10-12,30,4.7
+A005,Bob,P008,Security Specialist,2021-09-15,35,4.9
+A006,Bob,P010,Lead Developer,2022-02-15,25,4.6
+A007,Charlie,P003,Financial Analyst,2021-01-15,20,4.8
+A008,Charlie,P007,Team Lead,2021-06-20,25,4.7
+A009,David,P002,Marketing Specialist,2021-04-05,15,4.3
+A010,David,P006,Campaign Manager,2021-08-10,20,4.5
+A011,Eva,P004,Systems Architect,2020-10-12,25,4.8
+A012,Eva,P008,Developer,2021-09-15,30,4.6
+A013,Eva,P010,Database Administrator,2022-02-15,20,4.7
+A014,Frank,P001,HR Specialist,2021-02-10,15,4.4
+A015,Frank,P005,Testing,2021-07-01,10,4.2
+A016,Frank,P009,Recruitment Specialist,2022-01-10,20,4.5
+A017,Grace,P003,Budget Analyst,2021-01-15,25,4.9
+A018,Grace,P007,Financial Manager,2021-06-20,30,4.8
+A019,Hannah,P002,Content Creator,2021-04-05,20,4.6
+A020,Hannah,P006,Social Media Manager,2021-08-10,25,4.7
+A021,Ian,P004,Network Engineer,2020-10-12,35,4.8
+A022,Ian,P008,Security Analyst,2021-09-15,25,4.7
+A023,Ian,P010,Mobile Developer,2022-02-15,30,4.5
+A024,Jack,P001,HR Assistant,2021-02-10,10,4.3
+A025,Jack,P005,Documentation,2021-07-01,15,4.4
+A026,Jack,P009,HR Coordinator,2022-01-10,20,4.2 
